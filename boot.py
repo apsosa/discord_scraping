@@ -2,9 +2,7 @@ import requests
 import json
 
 def retrieve_messages(channel_id,file_name):
-  headers = {
-    'authorization': 'NTM1MjAzNjE2NzQzNjIwNjEx.YY2eJA.a5jJN6LAtEjPbd7_2oGntri9Qqg'
-  }
+  
   r = requests.get(f'https://discord.com/api/v9/channels/{channel_id}/messages',headers=headers)
   jsonn = json.loads(r.text)
   text_file = open(file_name, "w")
