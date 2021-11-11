@@ -1,2 +1,2 @@
 # discord_scraping
-Scraping messages from an discord channel
+Scraping messages from a discord channel
