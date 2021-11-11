@@ -1,7 +1,7 @@
 import requests
 import json
 
-def retrieve_messages(channel_id,file_name):
+def retrieve_messages(channel_id,file_name,headers):
   
   r = requests.get(f'https://discord.com/api/v9/channels/{channel_id}/messages',headers=headers)
   jsonn = json.loads(r.text)
@@ -18,9 +18,14 @@ file_name3 = "practica3.txt"
 file_name4 = "practica4.txt" 
 file_name5 = "practica5.txt" 
 file_name6 = "practica6.txt"  
-retrieve_messages(id_practica1,file_name1)
-retrieve_messages(id_practica2,file_name2)
-retrieve_messages(id_practica3,file_name3)
-retrieve_messages(id_practica4,file_name4)
-retrieve_messages(id_practica5,file_name5)
-retrieve_messages(id_practica6,file_name6)
+#To work I have to impor the nex items:
+#headers
+#channelid
+
+
+#retrieve_messages(id_practica1,file_name1)
+#retrieve_messages(id_practica2,file_name2)
+#retrieve_messages(id_practica3,file_name3)
+#retrieve_messages(id_practica4,file_name4)
+#retrieve_messages(id_practica5,file_name5)
+#retrieve_messages(id_practica6,file_name6)
