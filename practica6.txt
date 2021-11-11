@@ -1,0 +1,41 @@
+Tania S.F.:Uh, genial, ¡muchas gracias!
+Santiago Cifu:Buenas! Te respondo:
+1) Sip, un problema Pi es NP-completo si y solamente si Pi complemento es coNP-completo. Por lo tanto, una forma de probar coNP-completitud es complementando el problema y probando NP-completitud.
+2) Claro. Tener un algoritmo polinomial para resolver un problema de decision Pi no implica que puedas luego armar un algoritmo polinomial de busqueda para resolver Pi (si bien en algunos casos se puede, como en el que propone la guia en el ej 16).
+Tania S.F.:Buenas. Me surgieron un par de dudas teóricas que quería preguntar:
+1) Un problema es NPCompleto sssi su complemento es coNPCompleto, ¿verdad? Porque no lo vimos en la teórica (solo vimos que Pi es NP sssi Picomplemento es coNP), pero creo que vale y quería confirmarlo.
+2) Si un problema de decisión es polinomial tengo un algoritmo polinomial que lo resuelve, pero no necesariamente tengo un algoritmo polinomial para sus otras versiones, como la de optimización, ¿o sí?
+GabyDam:Lo voy a leer, gracias
+Juan Tollo:Está el apunte de la práctica tmb. A mi me sirvió ese tmb.
+GabyDam:Si, la verdad que me faltaron consultas, pero me atrase por el TP2 y otros temas y nunca llegue a ver las clases y sacarme las dudas en las consultas
+fsoulignac:Qué lastima que no hiciste las consultas durante las clases, asi quedaba grabada la respuesta en el video.  En cualquier caso, creo que tendrias que mirar otra vez la teorica antes que buscar la respuesta en la practica, porque es un tema teorico.  En cualquier caso, si tenes una duda puntual, abrí un thread y vamos respondiendo lo que podamos a ver si de esa forma queda claro.
+GabyDam:Ok gracias. Es que estoy viendo clases practicas hace horas y sigo sin entender qué es un certificado y cómo se obtiene. Estoy un poco perdido
+fsoulignac:Si pedis que sea máximo, sí, tiene que certificarlo.  En el caso de solo pedir valor >= k, hay que ver que satisface eso.  El proposito es entender el concepto de certificado.
+GabyDam:Ah ok! Y para verificar ese certificado (llamémoslo c), ¿habría que confirmar que c es igual al flujo máximo? y, si es así, ¿Cual es el propósito de proponer un c si puedo calcular directamente el flujo máximo?
+fsoulignac:Como dijiste, es el flujo. (No hace falta que sea el maximo, puede ser uno de valor >= k)
+GabyDam:Ok. Volviendo al ej 1.c, no se me ocurre un certificado. ¿Cuál sería un certificado valido?
+fsoulignac:en esencia, sí
+GabyDam:Osea un certificado trivial es que el problema de certificacion solo reciba el input?
+fsoulignac:El problema de certificacion toma como input el input del problema original + el certificado.  Pedir que el certificado tenga la red es redundante
+GabyDam:Hola profes, tengo una consulta más general. No terminé de entender qué es lo que tengo que tener en cuenta al elegir un certificado. Por ejemplo en el ejercicio 1.c, ¿puedo decir que mi certificado es el flujo máximo? ¿No necesitaría la red para saber cuál es el flujo máximo, y por ende mi certificado sería la red en sí?
+Octavio La Tessa:Ejercicio 7 a)
+Octavio La Tessa:Ejercicio 6
+Braier:Genial
+fioremos:😅
+fioremos:Ahhlisto, ya me di cuenta de que fue lo que asumi mal
+Braier:O no sé si te entendí bien
+Braier:Podrías resolver cualquier NP reduciéndolo a un problema polinomial
+Braier:Buenas! Eso es cierto si y sólo si P = NP
+fioremos:Buenas, tengo una duda sobre las reducciones, esta bien decir que un problema np puede ser reducido por cualquier problema np? O es muy fuerte?
+Patricio Bruno:Perfecto, muchisimas gracias
+fsoulignac:Pero ese conjunto no es un recubrimiento por vertices, porque ninguna arista del ciclo incide en el vértice central de la rueda.
+fsoulignac:Por ejemplo, si tenes el grafo rueda, que consiste en agregar un vértice universal a un ciclo, entonces un conjunto dominante D es tomar solo el centro de la rueda.
+fsoulignac:Conjunto dominante: un conjunto de vertices D, tal que todo vértice del grafo esta en D o es adyacente algún vertice de D.  Recubrimiento por vertices: un conjunto de vertices R, tal que toda arista incide en algun vértice de R.
+Patricio Bruno:Hola Profes! Me esta costando mucho entender la diferencia entre un Conjunto Dominante y un Recubrimiento por vertices.
+pasodelostoros:2e
+pasodelostoros:1d+2e
+Tania S.F.:Otra consulta. En el 2e no sé cómo dar un certificado que no sea el trivial, porque para mí igual tengo que hacer la verificación sobre G mismo. ¿Me podrían dar alguna pista como para ayudarme a destrabar?
+Tania S.F.:Buenas. Tengo una consulta del ejercicio 1d. El ejercicio habla de recorridos, no caminos, que según la definición que vimos en la teoría es una secuencia de nodos que sean adyacentes, pero pueden haber repetidos, entonces podría ser arbitrariamente grande. Yo quería usar un recorrido como certificado, pero si no lo puedo acotar en tamaño no me sirve. ¿Qué puedo hacer? ¿O estoy entendiendo mal?
+martosaied:Pregunta Ejercicio 2e
+Laureano Navarro:Pregunta sobre ej 18 (elementary shortest path)
+Laureano Navarro:Ejercicios 12 y 13

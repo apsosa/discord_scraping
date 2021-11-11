@@ -1,0 +1,64 @@
+Octavio La Tessa:claro, buenísimo, asumo que pide eso en realidad, gracias!
+pasodelostoros:Ahi vas a tener problemas con la raíz, per teniendo en cuenta eso sí, funcionaría. También funciona pintar de negro directamente donde pinta de gris (que es como yo implemento bfs usualmente 😛 )
+Quizás podés argumentar que estás borrando la línea 14 y reemplazandola por la 18 (?) Suena a que es un problema de wording nomás
+Octavio La Tessa:creo que se pueden usar dos colores borrando las lineas 5 y 14, pero en la linea 13 se tendria que fijar que v.pi==NIL, por ejemplo
+Octavio La Tessa:dice esto22.2-3
+Show that using a single bit to store each vertex color suffices by arguing that the
+BFS procedure would produce the same result if lines 5 and 14 were removed.
+Octavio La Tessa:ah, cierto, quedaria mal la distancia tambien
+pasodelostoros:*removidas* dice? Si hacés eso no te quedan mal las distancias con el mismo argumento que dijiste del padre? Es cierto que terminas pintando toda la componente conexa, pero ponele un triángulo, no te van a quedar distancias 1 y 2 en vez de 2 distancias 1 a partir de alguno de los 3 vértices?
+Sí veo que las podes modificar a las líneas 5 y 14 para usar solo 2 colores. Quizás me estoy perdiendo algo...
+Octavio La Tessa:
+Octavio La Tessa:Buenas, tengo una duda con respecto al Ejercicio 22.2-3 del Cormen.
+Pide mostrar que en el algoritmo de BFS se pueden usar solo dos colores, ya que produciría el mismo resultado si las lineas 5 y 14 fuesen removidas. Pero creo que si hicieramos eso, sin modificar nada del resto, el resultado seria correcto, pero se podrian sobreescribir los vertices blancos (al ser redescubiertos) y quedarían con la última opción de padre (pi) y no la primera.
+Walter Ariel Baya:Genial!,voy a ver si sale, muchas gracias!
+Tania S.F.:Dale, gracias
+fsoulignac:Pero Prim es simplemente hacer BFS con una cola de prioridad.  Si usas heap, entonces O(m log n), caso contrario, O(n^2).  Kruskal es un toque mas complicado.
+fsoulignac:Despues del parcial, si queres repasamos la implementacion.  Ahora me parece que no conviene.
+Braier:Buenas! Acá en el examen de hoy basta con decir "ejecuto Kruskal/Prim sobre este grafo con complejidad O(n2)/O(m lg n)" según corresponda. Si tu solución es modelar con un grafo y computarle un AGM no es necesario que digas con qué estructura representás al grafo.
+Tania S.F.:Claro, pero eso lo consigo eligiendo apropiadamente las estructuras para modelar el problema, ¿o no? Busqué en el Cormen lo de la complejidad, pero me pareció que se iba de tema porque mencionaba estructuras de datos de otros capítulos que desconozco y no podía invertir tiempo en eso tan cerca de rendir. Por eso mi pregunta, ¿qué tengo que elegir como estructura para llegar a esas complejidades?
+santipla:lo usas para el caso que te venga mejor
+fsoulignac:No hay condiciones, tenes que implementarlo y ya.
+santipla:Creo que depende de tu implementación
+Tania S.F.:¿Cuáles son las condiciones bajo las que se cumple que Kruskal/Prim tiene complejidad O(n²) y cuáles para O(m*log(n))?
+fsoulignac:sí
+Tania S.F.:¿Usando esto el ejercicio 6 no quedaría en 2 pasos? 
+1) Calculo las distancias para cada par Xi, Xj (O(kn²)).
+2) Uso Prim/Kruskal con O(n²).
+santipla:Perfecto, gracias!
+fsoulignac:sí
+santipla:Hola, me quedó una duda acerca de Prim y Kruskal: podemos asumir que tenemos ambas implementaciones tanto en O(n^2) como O(m * log n), no?
+pasodelostoros:estás ahí nomás
+pasodelostoros:para demostrarlo podés suponer que lo que mencionaste no anda, y pensar qué forma tiene que tener tu contraejemplo. si te olvidás las aristas infinitas, vas a tener un bosquecito. qué cosas tiene que cumplir ese bosque para ser óptimo / mejor que tu ejemplo? puede existir un ejemplo así?
+Walter Ariel Baya:No la verdad no, la intuición que tenía era que para aumentar el BDW, agarrar un árbol de AGMax y poner los infinitos en los valores de costo más chico del AGMax.  La justificación que tenía era que el BDW dependía del menor valor del AGMax. Después habría que ver que ese AGMax con los infinitos sigue siendo AGMax del grafo, pero no pude terminarlo...
+Tania S.F.:Buenas. ¿Pudiste encontrarle la vuelta o consultarlo en clase? Porque estoy trabada con eso desde ayer
+nicosarfa:ahh buenísimo! ahora lo chusmeo! gracias chicos!
+Laureano Navarro:sí, es ese.
+Laureano Navarro:creo que es 'arbol generador maximo'
+nicosarfa:
+nicosarfa:sisi, pero este es el ultimo que aparece
+Mette:Arriba a la derecha esta el botoncito de Threads (el Hashtag). Ahi estan todos los threads hechos en el canal. Tenes que ver los archivados
+Mette:
+Laureano Navarro:sí, pero se puede leer igual. podes dejar mensajes en él tmb.
+nicosarfa:groso! me parece igualmente que el hilo ya caducó, no?
+nicosarfa:exactamente ^
+Franco Muñiz:La del medio no vale porque no hay conexión con d
+Franco Muñiz:Podes sacar o dejar (b,f) y no te cambia, la que te cambia es (b,d) para subir el ancho de 1 a 2
+Franco Muñiz:Se debe referir al grafo de la derecha
+Laureano Navarro:(el hilo es del 17 de sep)
+Laureano Navarro:No sé si entendí la pregunta. En la fig del medio bf está eliminada porque es un G_3, o sea, un subgrafo de G donde las aristas de peso menor a 3 no están. 
+Si tenes más dudas sobre el ejercicio, hay un hilo de hace unos días en donde me parece que hay una idea bastante clara de cómo se resuelve.
+Franco Muñiz:Es indistinto eliminarla porque el ancho de banda del grafo sigue siendo 2, entiendo el ejemplo apunta a mostrar eso
+nicosarfa:Buenas! Perdon la hora! Pero hago una consulta del ejercicio 7.
+
+Si bien no es un gran cambio y no rompe el ejercicio, tiene sentido la arista de (b,f)? Es decir hay un camino que tiene mejor ancho de banda (b,e,f),
+
+Tendria sentido eliminar bf?
+Walter Ariel Baya:Claro, ||Si aumentamos la menor capacidad en el AGMax, por el ítem a) sabíamos que ese es el BDW, entonces vamos a a estar incrementando al mismo tiempo el BDW, entonces "parece" que lo conveniente es agarrar los k infinitos que tenemos e ir reemplazandolos en las aristas de menor peso de el AGMax eso entiendo,  pero el problema es que capaz si reemplazaba los infinitos en otro lado,  había forma de obtener otro AGMax con un número menor más grande, o sea no se me ocurre como justificar que la estrategia que tengo es la que da el mejor BDW||
+fsoulignac:Hola.  Olvidate un poco de Kruskal. Pensa en el arbol.  La intuicion esta bien: ||aumentar la capacidad de las aristas de menor capacidad en el AGMax va a hacer que se mejore el arbol, por qué?||.  No entiendo cuál es el inconveniente.
+Walter Ariel Baya:Hola buenas, tengo una consulta sobre el ejercicio 7 b ||Suponiendo que el algoritmo que uso es la variante de Kruskal que me da el AGMmax para calcular el ítem a) pensé que la manera de aumentar el ancho de banda sería incrementando  el mínimo valor de ese AGMmax, ya que justamente ese es el BDW. Suponiendo que el grafo tiene  |E| >= n .                             
+Si tengo n-1  infinitos, conviene reemplazar las n-1 aristas de mínimo costo en el AGMmax, ya que no puedo conseguir un BDW que el que podía sin los infinitos, porque eso quiere decir que sino había un valor más grande y Kruskal debió seleccionarlo en el otro AGMmax, entonces el BDW maximo sería el valor más grande del grafo, y  si i = 0, no tengo ningún infinito es lo mismo, entonces es lo mismo que correr AGMmax, y hallar el mínimo.                                                   
+El problema es que no logró ver si esto funciona  con 1<=i<n-1 infinitos. Gracias!||
+Danilov:Ejercicio 2.d)
+fsoulignac:Mostrar que c(xy) \geq c(ab) para todo arista ab en un camino que una v con w.
+Medrano Matias Exequiel:Buenas tardes, tengo una consulta con respecto al ejercicio 9. Se me hace un traba lenguas con esta parte "xy tiene un peso al menos tan grande como cualquier otra arista que une las componentes conexas de T ´  \ {xy}", lo que tengo que ver es que el peso de la arista que saque es menor al de las aristas que quedaron en cada bosque?

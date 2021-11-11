@@ -1,0 +1,64 @@
+FacuGB:Ejercicio 3
+fsoulignac:Hola.  Primero que nada, el ejercicio dice explicitamente que la matriz es simetrica.  Dicho esto, hay que validar que la matriz sea el resultado final de Floyd.  Entonces, hay que pensar lo que estas poniendo, pero olvidate del k.  Pensa que ya tenes el camino minimo dado y tenes que validarlo.
+FacuGB:Buenas Tardes, tengo una consulta sobre el ejercicio 3.
+ 
+||En primer lugar, ¿el grafo puede ser dirigido? Yo lo encaré suponiendo que puede serlo (y por lo tanto la matriz no tiene por qué ser simétrica). 
+
+Para resolverlo pensé que por optimalidad de subcaminos, el subcamino de un camino mínimo es un camino mínimo. Luego sea P^k_{i,j} un camino mínimo entre i y j con vértices contenidos en {v_1, ..., v_k}, hay 2 posibilidades:
+v_k está en P^k_{i,j}: en este caso P^k-1_{i,k} y P^k-1_{k,j} son caminos mínimos disjuntos y vale que la suma de sus longitudes es la longitud de P^k_{i,j}
+v_k no está en P^k_{i,j}: en este caso P^k_{i,j} = P^k-1_{i,j} 
+
+En base a esta idea se me ocurrió plantear una función que para cada camino mínimo valide que para cada par de subcaminos disjuntos, la suma de sus longitudes sea igual a la longitud del camino mínimo:
+
+d^k(i,j) = Verdadero si k=0
+           (M[i][j] = M[i][k] + M[k][j] ^ d^k-1(i,k) ^ d^k-1(k,j)) v d^k-1(i,j) en otro caso
+
+Me hace ruido poner Verdadero si k=0 en el caso base, no se me ocurrió que validar. Además creo que se rompe para el caso de pares de vértices no conectados, o debería agregar una caso más para contenerlo. Lo que intenté hacer básicamente fue usar la idea del algoritmo FW para así validar las cuéntas que este algoritmo haría al llenar la matriz de distancias.
+
+
+Medio que me mareé un poco y no se si estoy bien encaminado o me fui por las ramas, ¿está bien la idea?||
+fsoulignac:Tenes que especificar el problema.  En tu caso, el input es un conjunto de monedas y un vuelto.  El grafo que propones es independiente del vuelto.  Entonces, es imposible que una vez te devuelva true y otra te devuelva false.  De hecho, la frase ||se recorre encontrando todas las posibilidades.  La idea es que se lleve el vuelto a devolver como variable mientras itera para terminar los recorridos|| es un cómo, no un qué ||recorrer, iterar, llevar una variable, etc||.
+
+Ayuda: tenes que tener un grafo, los vértices y aristas dependen de las monedas y el vuelto a devolver.  Fijate que por la complejidad esperada, seguramente tengas más vertices y aristas cuanto más grande sea el vuelto a devolver.  Entonces, pensa en tener tantos vértices + aristas como posibilidades de vueltos.  Idea spoiler: ||cada camino en este grafo deberia codificar una forma de dar el vuelto.  La existencia de un camino hasta el vuelto indicaria que se puede dar el vuelto.  La menor cantidad/peso de las aristas recorridas va a indicar que se usan la menor cantidad de monedas.||
+Mariano:y entiendo que no va
+Mariano:No quiero molestarte mucho porque es finde largo, pero me podrias tirar masomenos una idea porque lo que yo plantie es una resolucion particular de camino minimo en este grafo puntual
+fsoulignac:Hola.  No, no es eso lo que esperamos.  En general: la idea de modelar un problema es especificar cómo se resuelve usando otro/s problemas conocidos.  Mientras que diseñar un algoritmo es dar un algoritmo especifico para un problema.  Yendo a AED1, modelar esta mas cerca del qué hay que resolver que del cómo.  Solo que es un cómo resuelvo este problema resolviendo otro.  En este ejercicio en particular, se espera un modelo como camino minimo.  Es decir, **especificar** qué problema de camino minimo hay que resolver sobre qué grafo.
+Mariano:||tendria 3 vertices, el nulo desde el que se arranca y las otras dos monedas, las aristas serian de coste 1 y se recorre encontrando todas las posibilidades. La idea es que se lleve el vuelto a devolver como variable mientras itera para terminar los recorridos||
+fsoulignac:No se si entiendo.  Si hubieran dos monedas: 1 y 5, tendrias dos vertices en tu grafo?  Independientemente de cuál sea el vuelta a devolver?
+Mariano:Buenas, quería hacer una consulta sobre el ejercicio 5 
+|| yo pense en poner los vertices con los valores de las monedas, las aristas de coste 1, usar un pseudografo y con DFS  desde un nodo vacio y buscar todas las ramas y devolver la de camino minimo. No se si esta bien planteado y queria consultarlo. Gracias||
+Danilov:Bellman-Ford con aristas invertidas
+Walter Ariel Baya:Ejercicio 4 a,b
+Laureano Navarro:Ejs 8 y 9
+Danilov:Consulta sobre DAG y Dijsktra
+Laureano Navarro:Ejercicio 4c)
+Danilov:Ejercicio 5 - Estoy perdido
+nicosarfa:Sumo otra pregunta del ejercicio 3)
+
+Me dan M, es decir la matriz de distancias de G luego de correr FW
+
+Por lo que haria lo siguiente:
+||
+1) Armo un grafo G con la matriz M
+2) Corro Floyd sobre G y me devuelve M'
+3)
+3.1) Si M == M' => Es Floyd
+3.2) Sino, devuelvo el par de vertices donde la distancia no coincide, es decir M[v][w] != M'[v][w] para v y w
+||
+Tiene sentido esa idea?
+fsoulignac:Ejercicio 1 - resolucion
+andresHense:Ejercicio 7 - operación conocida?
+nicosarfa:hola! como estan? hago una consultas del ejercicio 1
+
+||a)  Tanto ralo, como denso usaría BFS y lograría complejidad O(n) y O(n^2) respectivamente, es correcto?||
+
+||b) para ambos casos tambien usaria BFS, pero en vez de correrlo para un vertice, lo correria para todos, y me quedaria O(n^2) ralos y O(n^3) para densos||
+
+||e) Aca lo primero que se me vino a la mente fue Bellman-Ford, modificando el algoritmo como se propone en la teorica, es decir, si el algoritmo no termina despues de n-1 iteraciones >> hay ciclos negativos|| dicho eso.... no entiendo en que momento podria suponer que el grafo es conexo.
+
+||Con respecto al e) tambien, esta bien decir que si el grafo es ralo, me queda complejidad O(n^2) y si es denso O(n*m) == O(n * n^2) == O(n^3)?||
+Danilov:Ejercicio 2 - ¿A qué se refiere el ejercicio con ···basado en Dijkstra···?
+Danilov:Ejercicio 1 - ¿Multigrafo?
+andresHense:Ejercicio 1
+Laureano Navarro:Ejercicio 6
+Laureano Navarro:Ejercicio 3

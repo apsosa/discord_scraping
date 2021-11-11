@@ -1,0 +1,33 @@
+Tania S.F.:¡Muchas gracias!
+Tania S.F.:Ok, entonces resuelvo asumiendo el resultado como válido y listo. Creo que hice eso al final
+fsoulignac:Hola.  No vimos grafos eulerianos este cuatrimestre; sin embargo, el ejercicio se puede modelar con la equivalencia.  No hace falta que demuestren el sii, porque es un resultado conocido.  Con respecto a lo de conexo o no, en general para este problema se supone que no hay vertices aislados; sino, alcanza con salvar algunas definiciones, que no valen la pena para la guia.
+Tania S.F.:Dale, mañana lo vuelvo a mirar y si no me sale les escribo. Gracias
+pasodelostoros:De nada! No es fácil, es un lindo ejercicio. Cualquier cosa avisá y dejamos algún hint
+Tania S.F.:Gracias
+Tania S.F.:Sí, supongo que es algo así. Bueno, por ahora lo dejo pendiente, porque todavía no me sale modelarlo ni en la versión más simple original
+pasodelostoros:Estoy bastante quemado, así que tomarme con desconfianza y formalizamos lo que haga falta 😛
+pasodelostoros:(O sea que vas a pedir que un vértice tenga d_in = d_out + 1, otro tenga d_in + 1 = d_out, y el resto tengan d_in = d_out)
+pasodelostoros:Y cuando querés empezar en un vértice y terminar en otro, lo que hay que ajustar ahí es pedir que "del vértice del que salís" haya una arista más que salga que las que entran, y "al vértice al que llegás" haya una arista más que entra que las que salen
+pasodelostoros:Claro, sí, hay que ajustarlo. Intuitivamente, en el caso de ciclo euleriano, tenés que poder salir de cada vértice caminando tantas veces como tengas que entrar. Y un poco la demo formal es hacer eso una y otra vez, vas enganchando una y otra vez ciclos extra a tu "respuesta parcial". Eso hace que el caso grafo no dirigido sea igualito pero solo pidas grado par
+Tania S.F.:Quizás sale si cierro los ojos y asumo que el resultado que me dan vale, pero para mí no vale ese sssi, y entonces lo que plantee con eso no va a ser válido. Y no estoy segura cuál sí sería el resultado correcto
+pasodelostoros:Ah, sí, no hace falta para nada lo de probar vértices, anda más o menos el mismo modelo 😮
+pasodelostoros:Ah, sí, también 😛  Vale el mismo comentario, está pensado para ciclo porque lo hace un pelín más fácil. Si querés pensar recorrido también se puede igual 😄 Lo primero que me viene a la mente es una solución en la que vas a tener que probar todos los pares de vértice de inicio y fin del recorrido, pero seguramente se pueda ajustar para que no haga falta (lo pienso!)
+Tania S.F.:Pero entonces no necesito volver al punto del que empecé? Porque si es así no es cierto que necesite d+(v)=d-(v) para todo v. De ahí mi duda
+pasodelostoros:(si hay componentes conexas distintas con aristas no vas a poder hacer un recorrido que pase por todas!)
+pasodelostoros:Creo que pide que sea conexo para que el ejercicio sea "menos molesto". Sale caaaasi igual sin pedir conexo, pero hay que hacer algún comentario más, dependiendo de exactamente qué quieras hacer
+pasodelostoros:Hay que decir recorrido porque podés pasar varias veces por cada vértice, pero quizás podría decir claro "que pase por todas sus aristas, *una vez por cada una*". Es como los jueguitos de "podés hacer este dibujo sin levantar el lapiz?"
+
+No sé si entendí la segunda pregunta, pero entiendo que es un tema de notación? Llama grafo mixto euleriano a un grafo con algunas orientadas y otras no, y digrafo euleriano cuando ya están orientadas las aristas y se cumple que podés hacer el recorrido
+Tania S.F.:Sumo otra duda más con el 10, dice que un digrafo es euleriano (que definió como que exista un recorrido que pase por todas sus aristas) sssi es conexo y d+(v)=d-(v) para todo v. Pero si tengo un grafo conexo más un vértice aislado, quizás podría recorrer todas las aristas, ¿entonces por qué me pide que sea conexo?
+Tania S.F.:Una consulta. En el 10, ¿puede ser que la definición de euleriano sea que tenga un **_ciclo_** que pase por todas sus aristas y no un recorrido? Porque sino el resultado que da después no tiene sentido (creo).
+Y ya que estamos, si un grafo mixto euleriano es el que permite orientar las aristas no orientadas para cumplir la condición, ¿un _digrafo_ euleriano sería que ya cumple la condición? Porque no tengo nada que orientar.
+gosto:Ejercicio 7
+Laureano Navarro:Ejercicio 12 - figuritas
+Laureano Navarro:Ejercicio 11
+Laureano Navarro:Ejercicios 8 y 9
+Victor A.:Perfecto gracias!
+Braier:Igual si asumiste lo contrario ambos ejercicios quedan idénticos.
+Braier:Buenas!
+Sipp. Bah, al revés, d^- (v) es el grado de entrada y d^+ (v) el de salida creo.
+Victor A.:Buenas. Tengo una consulta mas de notaciones. En el ejercicio 9/10, cuando se menciona que v es un vértice y d^- (v) y d^+ (v) se refiere a los grafos de salida y de entrada del vértice respectivamente?
+Desde ya muchas gracias!

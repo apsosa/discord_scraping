@@ -1,0 +1,199 @@
+pasodelostoros:Ej 7 - AstroVoid
+nicosarfa:buenas! como estan? hago una consulta del ej7 de Astro Void
+
+Vi mas arriba que lo habian consultado el ejercicio, pero no termino de entender. El vector p, me indica los precios para cada dia de un asteroide, es decir, en el ejemplo
+
+p = (3, 2, 5, 6)
+
+p[0] = el asteroide vale 3
+p[1] = el asteroide vale 2
+p[2] = el asteroide vale 5
+p[3] = el asteroide vale 6
+
+lo que no me cierra es como puedo calcular la ganancia...?
+
+Es decir, estamos en el dia 3, si AstroVoid vende el asteroide saca 5 de ganancia, pero como se cuantos asteroides tiene almacenados hasta ese momento...? 3? (Estoy asumiendo que compra uno todos los dias)
+
+Por otro lado, si un dia no vende asteoides, vi en el thread que preguntaban por este ejercicio que se tornaba en "perdida" pero no me termina de cerrar.
+nicosarfa:----
+
+Dejo una consulta del **ej2** en un thread
+nicosarfa:Buenas! Como estan? hago una consultas del **ejercicio 1 **que me quedo super colgada....
+
+Del punto H:
+
+Entiendo el pseudo-codigo, pero no entiendo por que ese pseudo-codigo es igual a la propiedad que mencionan mas arriba de la sumatoria
+
+Del punto i:
+
+agregue esto: Va con spoiler:
+
+||```
+subset_sum(c, i, j) {
+    if (j < 0) {
+        return false;
+    }
+
+    if (i == 0) {
+        return j == 0;
+    }
+
+    // Esta es la poda que agregue
+    if (j >= c[i]) {
+        subset_sum(c, i - 1, j) OR subset_sum(c, i - 1, j - c[i])
+    }
+
+    subset_sum(c, i - 1, j)
+}
+```||
+
+Suponiendo que esta bien la poda, como podria escribirla de la forma que la pide el ejercicio?
+
+Lo que trate de expresar con esa poda ||es que si, me estoy pasando, ni checkeo esa rama||
+
+Muchas gracias!
+andresHense:Buenas, tengo una duda pava(?), no se como se diseña un algoritmo, mi estrategia hasta ahora viene siendo: 
+
+#1 buscar un programa  de c++ que ya halla hecho y que se parezca un poco al que quiero hacer.
+#2 copiarlo, modificarlo un poco y escribir test cases
+#3 ver que no pasen los tests, seguir modificando hasta que pasen.
+#4 buscar un caso borde, si no encuentro entonces doy al programa como correcto y sigo con lo que siga.
+
+El problema es que hasta donde yo se, eso no es diseñar y nunca toco un pseudocodigo(en la practica llaman algoritmo al pseudocodigo no?), ni escribo las funciones recursivas.
+
+Que seria diseñar un algoritmo exactamente? 
+Si escribo un pseudocodigo voy a estar sesgado a pensar que es correcto y no tengo un compilador que ejecute test cases para que me haga saber que esta mal, e implementar el algoritmo añade el peso de los detalles del lenguaje, y por lo que vengo experimentando, se puede gastar mucho tiempo sorteando los detalles especificos de implementacion para que pase los test cases.
+Si diseñar es solo escribir el algoritmo en pseudocodigo, de donde me saco un oraculo que me diga si mi algoritmo esta mal diseñado?
+Si diseñar contempla ese oraculo, cual es? y como seria ese proceso de diseño?
+belgo:Ejercicio 4 - enunciado
+fsoulignac:Consulta de apunte goloso
+Laureano Navarro:Buenas! 
+En el apunte de golosos, en el ejercicio de Meximisación, hay algunas cosas que no sé si entiendo. Por ej: dice que "... decimos que una permutacion de X es golosa si las primeras y = mex(X; n) posiciones de X son 0,..., y − 1 en este orden(Notar que todo conjunto X admite al menos una permutación golosa.)" ¿Pero y si un X no tiene a todos los números del 0 al (y-1)? 
+Más adelante dice que "  mex(X; i) ≤ i−1 para toda permutación X y todo 1 ≤ i ≤ n" Pero si yo tengo X = {0,1,2,3}, ¿no es mex(X;4) =4?
+Patricio Bruno:Hola nuevamente, tengo otra pregunta: haciendo el ej 12 pude encontrar un algoritmo goloso que resuelva el problema pero me está costando mucho formalizar el problema para luego demostrar la correctitud. ||Pensé en buscar el cardinal del conjunto P = {p \in A x B} siendo A y B los multiconjuntos dados, pero tampoco se me ocurre como pedir que cada persona de A y B aparezca a lo sumo una vez como parte de una pareja en P||
+fsoulignac:Ejercicio 11 - complejidad espacial
+Patricio Bruno:Buenas! Estaba haciendo el ejercicio 11 con la modalidad bottom-up, y logre dar con un algoritmo que con complejidad espacial O(w) te dice si el problema se puede o no resolver, pero no te dice cual es la secuencia de operaciones. Para devolver la secuencia de operaciones, lo mejor que se me ocurre tiene complejidad espacial O(n*w). Es posible mejorarlo? En caso de que sí, como podría lograrlo?
+Mariano:Buenas, tengo una consulta sobre el 5d. No sabria bien como afecta a la complejidad que k<<2^n o el caso contrario
+Victor A.:Buenas. Tengo una consulta respecto al ejercicio 7 a la practica. Es mas sobre entender el enunciado
+En el mismo se menciona que p pertenece a N^n y p_i es el precio del asteroide en el i-esimo dia
+Tambien que se busca la maxima ganancia
+Entonces. en el ejemplo se pone que
+Si p=(2,3,5,6) el resultado es 6. Entonces asumo que p es un asteroide, y luego de 4 dias esos son los precios. Entonces la mayor ganancia es 6 porque resulta de vender el asteroide el 4-to dia
+Si esto es asi, entonces, tenemos despues
+p = (2,3,10) donde el resultado es 7. Si es como mencione antes, el resultado no deberia ser 10? Porque la mayor ganancia resulta de vender el asteroide a 10 en el 3-er dia. Es decir, p_3. Si i >= 1
+O por ahi estoy malinterpretando las cosas
+Gracias!
+Danilov:Hola que tal, tengo una consulta sobre el ejercicio 6-b)|| y estoy teniendo problemas para poder hacer la recursion que dado el menor exceso usar la menor cantidad de billetes. Es decir, no me queda claro que debería devolver la función. ¿Estaría bien que devuelva una tupla? Ya que de esa forma podría pedir que entre todos los resultados con el primer elemento (exceso) más grande < 0, devolver el que tenga en el segundo elemento(cantidad de billetes) con menor cardinal.||
+fsoulignac:Ejercicio 10 - complejidad esperada?
+Firewill:hola, estaba pensando el 10 b, y después de mucho llegué a esto, que entiendo que funciona (creo), pero la estructura de memoización me da una complejidad espacial muy muy mala, la idea está cerca o debería replantear totalmente la función?
+Walter Ariel Baya:Ejercicio 5 Complejidad algoritmos top down
+andresHense:Buenas, me esta costando leer el ejercicio 3, en particular el termino subconjunto de una matriz, que es un subconjunto de una matriz? 
+En la pregunta lo describen como una lista {1,...,n}, mi primer suposición fue que es una subsecuencia de una de las filas de la matriz, pero despues usan una sumatoria donde piden que i,j pertenezca al subconjunto, osea que no es eso, pero que pida que i,j pertenezcan al subconjunt, y que el subconjunto empieze en 1 y una optima sea {1,2,3} para una matriz de 4x4 me confundieron y ya no se que pensar.
+Porq empieza en 1 el subconj? no puede ser q sea porq la matriz empieze en la pos 1 y no la 0 porq el subconj optimo que muestran de ejemplo tiene {1,2,3} y si fuera q 1 denota la primera pos en ese lugar habria un 0 y por lo tanto no seria optima.
+No entiendo lo siguiente: 
+1_ que es un subconj de una matriz?
+2_ como se usa para maximizar esa sumatoria?
+3_ porq {1,2,3} es un subconj optimo?
+Firewill:Hola estaba haciendo el 6 c, cuando me pide determinar cuando cc'_B tiene la propiedad de superposición de subproblemas, me está pidiendo alguna condición sobre B, i, j (por ejemplo j >> i) o simplemente que note los llamados repetidos en el árbol?
+pasodelostoros:Ejercicio 2 - probando threads
+Mette:Buenas, el ejercicio 2 pide:
+*Enunciar un algoritmo que use backtracking para resolver este problema que se base en la siguientes ideas:
+La solución parcial tiene los valores de las primeras i − 1 filas establecidos, al igual que los valores de las primeras j columnas de la fila i.
+Para establecer el valor de la posición (i, j+1) (o (i+1, 1) si j = n e i 6= n) se consideran todos los valores que aún no se encuentran en el cuadrado. Para cada valor posible, se establece dicho valor en la posición y se cuentan todos los cuadrados mágicos con esta
+nueva solución parcial.*
+
+Cuando dice enunciar, la idea es contar cuales son las soluciones validas, candidatas y las parciales? O se espera otra cosa como hacer pseudocodigo?
+fsoulignac:Hola nuevamente.  Vi que ya respondio Franco.  Un comentario nomas: ||como dije esta bien que la complejidad quede expresada en funcion de k.  No hay que buscar cota a eso.  Por si las dudas, O(n choose k) = O(n^k), es decir, es un polinomio en k.  Esa es una cota bastante bonita para dejar expresada.||
+fsoulignac:Hola.  No, definitivamente no.  Dije que el lunes vamos a ver hasta el 6, pero no es esperado que los tengan hecho.  Sí es deseable, y mucho, que practiquen antes de la clase, pero no es obligacion.  La clase espera que hayan visto la teorica, hayan entendido el tema lo mejor posible (y hayan consultado con Paula lo que no entiendan), tengas las consultas preparadas que no pudieron zanjar con Paula, y hayan practicado los ejercicios de la Teorica.  No espera que ya hayan resuelto la guia.  
+
+Dicho todo lo anterior, nosotres vamos a subir las guias cuando se presente la teorica para que puedan adelantar quienes quieran.
+Walter Ariel Baya:Hola Franco de nuevo!, genial logré entenderlo, no me había percatado de que me faltó el n multiplicando, después de repensarlo logré entenderlo. Gracias!
+Firewill:dale gracias! voy a ir viéndolos, ya con ver la definición creo poder pensar algo.
+Walter Ariel Baya:Hola Franco!, muchas gracias por tu respuesta, lo de chequeár si el conjunto no se pasó de tamaño, creo que me equivoque en eso jaja, porque claro en realidad el |I| == k es el caso base jaja, no haria falta…
+despues el max e i_max son variables por referencia, que se actualizan para todos los usos, la idea es que al finalizar el algoritmo en el max te quede el valor de la suma maxima que corresponde con la que se genera de usar los indices en i_max, ahora que lo pienso quizas con la informacion de i_max bastaría creo nomas al final le calculas el tamaño y tenes i_max 🙂
+pasodelostoros:con lo que vieron en la teórica hasta ahora, diría que hasta el 4, por esto mismo de que aún no vimos dinámicas.
+
+iguaaaaaaaaaaaal si querés ir adelantando, están guiados y capaz los podés ir pensando aunque aún no hayamos visto ejemplos de dinámicas 🙂
+martin:Hola!
+Una alternativa si tienen instalado `make`   es usar un .cpp por ejercicio y hacer un makefile sencillo para compilar
+Les dejo un ejemplo por si les sirve de referencia https://justpaste.it/2rtf4.
+Igual no lo tomen como algo necesario. A mi por ejemplo me sirve más pensar los ejercicios en papel y después pasar a implementarlos.
+andresHense:Buenas, curse algo2 el segundo cuatri de 2020 y desde entonces no toque una línea de código de c++, cuestión q trate de implementar el ej1 de la práctica en C++ y me tomo toda la tarde levantar el entorno, si alguien más está igual de oxidadx q yo le dejo link a un repo q hice con el entorno ya levantado y un readme 
+https://github.com/AndresHense/subset_sum_problem (está de yapa el código en javascript también)
+Firewill:alguién había mencionado algo así pero ya el ej 5 es programación dinámica que por lo que entiendo no vimos.
+Firewill:hola una consulta básica, para el lunes la idea es tener hecho hasta el 6? es así?
+pasodelostoros:sobre la parte B:
+
+sinomequivoco, cuando calculás la complejidad temporal, a la sumatoria de (n choose i) de 0 a k - 1 le falta un * n, por el for que hacés en esos casos.
+
+con eso en mente, te queda n * ((n choose k) * n + sum (n choose i))
+acá yo lo dejaría así, le metés un O(...) adelante y listo 😛 ninguno de los 2 términos de la suma tiene (que conozca) lindas cotas como para reemplazarlos.
+
+al margen: si quisieras acotar asumiendo k como la peor constante posible, lo único que veo es que no vamos a conseguir nada mejor que O(2^n * n) 
+por ejemplo, porque con k = n / 2, (n choose (n / 2)) >= (2^n) / n, o porque con k = n, la suma de n choose k nos da casi 2^n
+tampoco me está saliendo conseguir esa cota o ver que la posta sea 2^n * n^2 en ese caso 🙂
+
+
+Sobre la complejidad espacial: Francisco mencionó contemplar solo la memoria adicional, entonces los inputs no entrarían en juego en la cuenta. fuera de ese comentario, está muy bien y claro.
+
+
+sobre la parte C, veo la poda bien y clara!
+pasodelostoros:voy respondiendo sobre el A: esta muy bien! algunos detalles, pero que son super menores:
+
+fijate que para "solución parcial" pedís poder extenderla a una solución candidata, pero cuando definís cómo extendés una solución parcial perdés esa condición, y podrías extender soluciones parciales a cosas que no son soluciones parciales.
+es un detalle menor, porque podés no pedirle a las soluciones parciales que sí o sí tengan que poder extenderse, y listo. también podrías tener ese cuidado al extender las parciales.
+
+Notar que en el algoritmo seguís pudiendo tener el criterio de ver si una solución parcial se va a poder extender a una candidata, solo que en vez de formar parte de la definición de solución parcial pasa a ser una poda.
+
+En el algoritmo hay un detalle parecido: chequeás si el conjunto no se pasó de tamaño, pero por tu definición de solución parcial eso no debería poder pasar. No es un problema en sí chequearlo, pero es raro
+En ese caso mencionás que "hacés lo mismo que cuando no se puede extender a tamaño K, ... |I| = K", pero entiendo que si "te pasaste" es porque |I| > K, así que quizássss no entendí bien esta parte.
+
+No me queda super claro cómo tratás a max e I_max, son algún tipo de variable pseudo global / referencias / algo que una vez que lo actualizás dentro de una función se actualiza para todos los usos, no?
+Walter Ariel Baya:Genial gracias!
+fsoulignac:Hola, no puedo revisarlo ahora, asi que solo respondo una cosita. || El valor k es un parametro del algoritmo; entonces es esperable que te quede la expresion de la complejidad en funcion de k.  Si k cambia, cuesta mas el algoritmo; sino, cuesta menos.  Si el k fuera 1, por ejemplo, el algoritmo deberia ser muy rapido. ||
+Walter Ariel Baya:Hola buenas!, estuve resolviendo el ejercicio 3 y me encontré con algunas dudas, quería saber como va encaminado en si, adjunto mi resolución completa, ||Al momento de calcular la complejidad temporal me queda algo que depende de k, entonces intenté acotar pero no sé si la cota que propuse esta bien. después en la complejidad espacial no llegué a corregirla pero como supuse que todo se pasa por referencia y que podemos agregar un elemento a I en tiempo constante al igual que quitarlo considerando una implementación con un vector o lista con iterador, entonces la complejidad espacial en si sería O(3k) porque es la longitud de la rama más larga del árbol de recursión O(k) del algoritmo en si mas la complejidad de resolver el caso base , donde sumaIndices tiene complejidad espacial 0(2) y luego copiar el vector tiene complejidad espacial O(k). Gracias!||
+fsoulignac:Hola!  Complejidad espacial es contar la cantidad de registros (para no meternos con los bits) de memoria **adicional** (i.e., descontando el input y el output) que se mantienen activos en peor caso.  Ejemplo: la complejidad espacial de (una implementacion razonable de) heapsort es O(n) registros, porque mantenemos el heap en un vector de n posiciones.  En cambio, la complejidad espacial de (una implementacion razonable de) minimo es O(1) porque solo necesitamos mantener un indice para iterar y un valor para guardar el minimo.   En otros ejemplos mas complejos, depende de la implementacion.
+
+En el ejercicio, depende de cómo recorras el arbol.  Si haces recursion, será el  maximo de entre todas las ramas de la profunidad de la rama * cantidad de bits en cada nodo de la rama.  (Aca hay que tener cuidado de si se pasan parametros por copia o por referencia.)  Al igual que la complejidad temporal, se suele expresar en funcion del tamaño de la entrada (que salvo ocasiones particulares, tambien describimos como una cantidad de registros).  
+
+Con respecto a la cota por optimalidad, es un typo (el ejercicio es nuevo).  Se refiere a poda.  Gracias por avisar asi lo corregimos!
+Laureano Navarro:Hola, buenas tardes! En los ejercicios 3 y 4, en el inciso c) piden, además de la complejidad temporal, calcular la complejidad espacial ¿Qué sería eso?¿Tiene algo que ver con el asunto de tener en cuenta los bits de las entradas, etc? 
+En el inciso d) piden proponer una cota por optimalidad. Por lo que ví en la teórica, se habla de podas por optimalidad, pero no de cotas ¿Qué vendrian a ser? 
+Muchas gracias! Saludos!
+Walter Ariel Baya:Genial francisco, gracias.
+fsoulignac:Hola.  No estan declaradas todas las variables, pero creo que entiendo lo que hace y eso estaria bien (y es lo esperado).  Igualmente, si la preocupacion es por las variables globales, siempre podes usar el viejo truco de la funcion adentro de funcion (en realidad no es viejo, pero los lenguajes tienen eso; en C++ son funciones lambda y se ven en paradigmas; en Python es mas natural).  Es decir, tu funcion seria:
+
+function pepe(C):
+    Crear mi variable local X de pepe, pero que es "global" para quique
+    function quique(): //tengo acceso a pepe y a la variable X
+       usar X y llamar recursivamente a quique si quiero
+
+Igualmente, nada de esto es necesario para la materia.  Ya somos grandes, sabemos ocultar variables globales (haciendo esto o creando una clase que tenga la variable global adentro y un operador o utilizando una recursion que llame con variables por referencia para evitar tener la global, o creando un archivo c que tiene una varible estatica dentro que no puede ser cargada afuera, etc) y por lo tanto las usamos libremente para comunicarnos y suponemos que las vamos a poder ocultar cuando queramos ser prolijos.
+fsoulignac:Hola, la respuesta corta es que no podes usar O(..) cuando pruebes algo por induccion, salvo que sepas muy bien las implicancias y qué estas haciendo.  La razon es que podes terminar con demostraciones que digan que \sum_{i=1}^n O(1) = O(1) y a la vez \sum_{i=1}^n O(1) = O(n) (una de las cuales puede ser incorrecta).  Entonces, te sugiero que plantees bien el costo:
+|| T(n) = c cuando n = 0 mientras que T(n) = 2T(n-1) + c (en caso contrario) para una constante c||
+Más aún te sugiero fuertemente que dejes de medir el tiempo y que empieces a contar una operacion significativa para la que puedas arguemtar que el tiempo de cada llamado recursivo es c * (costo operacion significativa).  En tu caso, la operacion significativa puede ser el llamado recursivo, con lo cual, queres contar la cantidad de llamados recursivos.  Si lo haces, el tiempo (por la hipotesis) sera O(2^n) * c = O(2^n).  En este caso, la recursion te queda:
+|| T(n) = 1 cuando n = 0 y T(n) = 2T(n-1)  en caso contrario||
+Finalmente, te sugiero fuertemente que uses otros argumentos igualmente convincentes, como el que dijiste, dado que este es un tema de AED2 que en AED3 suponemos conocido.  Entonces, en AED3 alcanza con que digas || Estoy construyendo un arbol binario que en peor caso tiene 2^n hojas (y por lo tanto 2^{n+1}-1 nodos) y la construccion de cada nodo cuesta O(1) tiempo ||
+Walter Ariel Baya:Tambien tenia una consulta sobre el item J del ejercicio 1, se me ocurrió esta implementación, quería saber si conocen otra manera por ahí que trabaje con el vector p no como variable global sino dentro de los llamados recursivos ||                                                                                                                   
+BT(C, i,j)
+    SI  i = 0:
+        SI j = 0
+            imprimir(p);
+            terminar;
+    SINO:
+           p[i-1] = 1;
+           BT(C, i-1, j - C[i-1]);
+           p[i-1] = 0;
+           BT(C, i-1, j);                                                                                                            Gracias.||
+Walter Ariel Baya:Hola buenas, tengo una duda con el ejercicio 1 F ||Cuando quiero calcular la complejidad hago el árbol de recursión y obtengo que es O(2^n), ya que previamente planteé que la función de tiempo T(n) = {                                          
+                                                                                                       O(1) si n = 0,                        
+                                                                                                       2T(n-1) + O(1) sino           
+                                                                                                    }                                                  ya que O(1) es lo que cuesta hacer las restas y el (v) y T(n-1) sería el costo de cada llamado recursivo que se hace, n = dim(C), el problema surge cuando quiero probar efectivamente que la complejidad es O(2^n) , de momento hice inducción de la siguiente manera:     Quiero probar que T(n)<=d2^n   para d>0 entonces        T(n) <= 2T(n-1) + O(1), pero 2T(n-1) <= d2^n por hipótesis inductiva                        
+ luego     T(n) <= 2T(n-1) + k <= d2^n + k  y acá no se como llegar a que d2^n + k <= 2^n.           El problema principal lo tengo con la recursión, no se como probarla...busque en el cormen pero encontre mas que nada divide and conquer. y no recursiones de este tipo. Informalmente puedo pensar que  la complejidad es O(2^n) porque lo que se está haciendo implicitamente es ir armando todos los subconjuntos posibles de C en cada paso y al final unicamente decidir cuales suman lo pedido mirando si k = 0, no se si con esto alcanza, de todas maneras me gustaría saber cual es el camino o el truco que me esta faltando para probarlo formalmente mediante sustitucion. Gracias.||
+santipla:Muchas gracias! Ahora me pongo a seguir el ejercicio
+fsoulignac:Sí, la idea es que sea otra poda que sume a lo anterior.  Va el spoiler || en lugar de pensar en lo que ya agregaste, pensa en lo que te queda por agregar...  Quiza ya sabes que no te va a alcanzar.||
+santipla:Si si, esa poda es la que pensaba originalmente, hasta que la vi. Por otro lado, pensaba que la que tengo que idear yo no se sumaba a la anterior
+fsoulignac:Aca pide una poda nueva (y que sume a la anterior)
+fsoulignac:Ahi revise la guia.  La poda que te iba a proponer es la que esta en el inciso h.  Fijate que esta poda generaliza la que vos das (y entonces la nueva poda, combinada con esta, definitivamente no poda nada).   Porque la suma siempre es mayor o igual que cualquiera de los elementos que elegiste.
+santipla:Si no hay problema te acepto el spoiler, y cualquier cosa pregunto el lunes para no sacarte mas tiempo
+fsoulignac:Lo que digo es que la poda que propones no termina podando nada en los casos de interes.  Entonces, algoritmicamente, no es una buena poda.  Es facil dar una poda mejor (que generaliza esta) y que aproveche la informacion parcial en cada nodo.  Si queres, puedo ser mas explicito con un spoiler.  (Cuando digo que es facil, me refiero a que es una poda que no presenta mayor complejidad algoritmica ---en terminos de recursos--- y por lo tanto es conveniente)

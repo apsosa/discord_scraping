@@ -1,0 +1,35 @@
+Danilov:Gracias profes por la respuesta
+Santiago Cifu:No vamos a preguntar específicamente por la complejidad de las operaciones, pero están implícitas en el diseño de los algoritmos
+Danilov:¿Entra en el parcial saber todas las complejidades de las operaciones en cada una de las estructuras?
+fsoulignac:No necesariamente.  Las operaciones las tenes que ver cada una en su caso y con su estructura.
+Danilov:Desde ya, graciasss
+Danilov:Ok. Pero entonces, ¿las listas de adyacencia admiten que todos los incisos de **operaciones **que no incluyen vencidades se resuelvan en O(n+m)?
+fsoulignac:No, se refiere a que podes crear las listas de adyacencias a partir de el conjunto de aristas en O(n+m)
+Danilov:Hola que tal! Estoy repasando para el parcial y me quedé con la duda de que en el ejercicio 8 no me quedó claro a que se refiere con "construir en O(n+m)". ¿Se refiere a que, una lista de adyacencia, todas las operaciones del ej 7 las hace en O(n+m)?
+Tania S.F.:Genial, gracias
+fsoulignac:Eso, construir el grafo y mostrar que es unico.
+fsoulignac:No lo se, las preguntas del labo van en el canal del labo y no respondemos para no meter la pata.
+Tania S.F.:Y otra más para no estar haciendo cualquiera, ¿qué sería exactamente "demostrar de forma constructiva" (ejercicio 3)? Yo intenté construir un grafo que cumpla lo pedido y vi que eso me daba un único grafo (salvo isomorfismos)
+Tania S.F.:Ah, joya, entonces en el TP donde dice aristas lo tomo como sinónimo de arcos. Gracias
+fsoulignac:Depende quién, lo llaman arcos, aristas, aristas dirigidas, etc
+Tania S.F.:Una consulta. En teoría vimos que los digrafos tienen arcos, ¿pero también se le dice aristas?
+fsoulignac:Sí, esa es otra notacion estandar de cardinalidad.  La elección de cuál se usa en general depende de la bibliografia que cada area consume.
+andresHense:Recuerdo de algreba y proba que al cardinal lo escribia como #A, me mareo un poco que lo este igualando a una sum, ya me quedo claro entonces, gracias
+fsoulignac:Hola.  Primero que nada, una aclaracion: no existe una notacion estandar en teoria de grafos.  Dicho esto:
+
+-  Para un grafo G = (V, E), nosotros vamos a usar V(G) = V y E(G) = E.  Por otra parte, |S| sí es una notacion estandar para la cantidad de elementos de un conjunto S (https://es.wikipedia.org/wiki/Cardinalidad)
+santipla:que es como se le llama a las aristas en inglés
+pasodelostoros:claro
+santipla:creo que la E se refiere a edge
+pasodelostoros:mirando el ejercicio, sí, al menos si llamás E(D) al conjunto de las aristas el enunciado es cierto ;P
+Firewill:casi seguro que es la longitud del conjunto de aristas del digrafo D, si no hice mal toda la guía xd pero un profe después te confirma
+andresHense:Buenas, tengo una duda con la notación del ej1, que es |E(D)|?, estuve buscando por el apunte de Paula y no encontre esa notación, si tuviera que adivinar diria que es el modulo de la esperanza de un grafo, pero esto no es proba, y los |v| tambien se usan para denotar longitud.
+Firewill:okay, entiendo, gracias!~
+pasodelostoros:holi! sobre el a, lo primero que dijiste está bien, N[v] es la lista de vértices que son los vecinos de v.  ej N[0] = [2,5] si los vecinos del vértice 0 son el 2 y el 5.
+
+sobre el b, entiendo que la respuesta es solo "sí" (no punteros), pero por las dudas: entiendo que la idea la podrías pensar como guardar pares de índices que te hablan de posiciones en las listas de la vecindad del ootro vértice, ej N[0] = [(2,0),(5,0)], N[2] = [(1,0)], N[5] = [(1,1)]
+Firewill:hola! en el 7, la estructura a), dice que en N[i] accedo a la lista de los vecinos del i-ésimo vertice, o sea una lista de vértices?
+
+No estoy entendiendo como es que N[v] es una secuencia que tiene en cada posición a N[v].
+
+en el b) en cada N[i] ese vértice v tiene solo el índice de i en N[v] no? o para todo vértice y son punteros?
